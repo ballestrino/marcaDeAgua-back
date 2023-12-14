@@ -46,7 +46,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
     // console.log(image);
 
     // Ruta de la marca de agua
-    const marcaDeAguaPath = path('marcasDeAgua', waterMark);
+    const marcaDeAguaPath = path.join(__dirname, 'marcasDeAgua', waterMark);
 
     // Redimensionar la marca de agua
     const marcaDeAguaBuffer = await sharp(marcaDeAguaPath)
