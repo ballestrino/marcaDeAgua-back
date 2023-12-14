@@ -1,9 +1,12 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
 import multer from 'multer';
 import cors from 'cors';
+45;
 
 const ___filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(___filename);
@@ -74,7 +77,8 @@ app.post('/upload', upload.single('file'), async (req, res) => {
   }
 });
 
-const port = 3000;
-app.listen(port, () => {
-  console.log(`app listening on port: ${port}`);
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => {
+  console.log(`app listening on port: ${PORT}`);
 });
