@@ -27,12 +27,12 @@ app.get('/', (req, res) => {
 
 app.post('/upload', upload.single('file'), async (req, res) => {
   try {
-    let waterMark = 'waterMark2.png';
+    let waterMark = 'WaterMark2.png';
     const selectWaterMark = req.body.watermark;
     if (selectWaterMark === '1') {
       waterMark = 'waterMark.png';
     } else if (selectWaterMark === '2') {
-      waterMark = 'waterMark2.png';
+      waterMark = 'WaterMark2.png';
     } else if (selectWaterMark === '3') {
       waterMark = 'waterMark3.png';
     } else if (selectWaterMark === '4') {
