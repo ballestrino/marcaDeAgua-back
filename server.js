@@ -50,6 +50,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
     // Redimensionar la marca de agua
     const marcaDeAguaBuffer = await sharp(marcaDeAguaPath)
+      .rotate()
       .resize(1080, 1080)
       .toBuffer();
 
